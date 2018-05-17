@@ -38,8 +38,8 @@ export class EditorComponent extends Events implements AfterViewInit, ControlVal
   @Input() plugins: string | undefined;
   @Input() toolbar: string | string[] | null = null;
 
-  private onTouchedCallback = () => { };
-  private onChangeCallback = (x: any) => { };
+  private onTouchedCallback = () => {};
+  private onChangeCallback = (x: any) => {};
 
   constructor(elementRef: ElementRef, ngZone: NgZone) {
     super();

@@ -11,7 +11,7 @@ The editor component itselt is located in the `tinymce-angular-component` and pa
 ## Installation
 
 ```sh
-$ npm install @tinymce/tinymce-angular
+$ npm install self-tinymce-angular
 ```
 
 ## Usage
@@ -46,7 +46,7 @@ And add it to you application module:
 Use the editor in your templates like this:
 
 ```tsx
-<editor apiKey="test" [init]="{plugins: 'link'}"></editor>
+<editor hostUrl="assets/tinymce/tinymce.min.js" [init]="{plugins: 'link'}"></editor>
 ```
 
 ### Configuring the editor
@@ -172,4 +172,8 @@ For more info on the different versions see the [documentation](https://www.tiny
 ### Loading TinyMCE by yourself
 
 To opt out of using TinyMCE cloud you have to make TinyMCE globally available yourself. This can be done either by hosting the `tinymce.min.js` file by youself and adding a script tag to you HTML or, if you are using a module loader, installing TinyMCE with npm. For info on how to get TinyMCE working with module loaders check out [this page in the documentation](https://www.tinymce.com/docs/advanced/usage-with-module-loaders/).
+
+----
+use `self-tinymce-angular` instead.
+
 
