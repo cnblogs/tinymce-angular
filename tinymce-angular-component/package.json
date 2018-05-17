@@ -1,9 +1,9 @@
 {
-  "name": "@tinymce/tinymce-angular",
-  "description": "Official TinyMCE Angular Component",
+  "name": "@tinymce/self-tinymce-angular",
+  "description": "TinyMCE Angular Component for self-host",
   "version": "2.0.0",
-  "repository": "https://github.com/tinymce/tinymce-angular.git",
-  "author": "Ephox Inc",
+  "repository": "https://github.com/cnblogs/tinymce-angular.git",
+  "author": "cnblogs-keke",
   "license": "Apache-2.0",
   "private": false,
   "peerDependencies": {
