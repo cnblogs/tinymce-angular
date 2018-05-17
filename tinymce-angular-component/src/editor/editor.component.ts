@@ -29,6 +29,7 @@ export class EditorComponent extends Events implements AfterViewInit, ControlVal
 
   @Input() cloudChannel: string | undefined;
   @Input() apiKey: string | undefined;
+  @Input() hostUrl: string | undefined;
   @Input() init: { [key: string]: any } | undefined;
   @Input() id = '';
   @Input() initialValue: string | undefined;
@@ -37,8 +38,8 @@ export class EditorComponent extends Events implements AfterViewInit, ControlVal
   @Input() plugins: string | undefined;
   @Input() toolbar: string | string[] | null = null;
 
-  private onTouchedCallback = () => {};
-  private onChangeCallback = (x: any) => {};
+  private onTouchedCallback = () => { };
+  private onChangeCallback = (x: any) => { };
 
   constructor(elementRef: ElementRef, ngZone: NgZone) {
     super();
@@ -79,10 +80,15 @@ export class EditorComponent extends Events implements AfterViewInit, ControlVal
       this.initialise();
     } else if (this.element) {
       const doc = this.element.ownerDocument;
-      const channel = this.cloudChannel || 'stable';
-      const apiKey = this.apiKey || '';
-
-      ScriptLoader.load(scriptState, doc, `https://cloud.tinymce.com/${channel}/tinymce.min.js?apiKey=${apiKey}`, this.initialise);
+      let url = '';
+      if (this.hostUrl) {
+        url = this.hostUrl;
+      } else {
+        const channel = this.cloudChannel || 'stable';
+        const apiKey = this.apiKey || '';
+        url = `https://cloud.tinymce.com/${channel}/tinymce.min.js?apiKey=${apiKey}`;
+      }
+      ScriptLoader.load(scriptState, doc, url, this.initialise);
     }
   }
 
